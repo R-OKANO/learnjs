@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Sample</title>
+  <script type="text/javascript" src="js/marked.min.js"></script>
+  <script type="text/javascript" src="js/download.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/default.css">
+</head>
+<body>
+  <div id="editor">
+    <textarea id="input"># title</textarea>
+    <div id="result"></div>
+  </div>
+  <div id="footer">
+    <button class="btn-flat-border" id="savemd" type="button" onclick="saveMd()">SaveAs MD</button>
+    <button class="btn-flat-border" id="savehtml" type="button" onclick="saveHtml()">SaveAs HTML</button>
+  </div>
+  <script>
+    document.getElementById('input').onkeyup = function(e) {
+      document.getElementById('result').innerHTML =
+        marked(document.getElementById('input').value);
+    };
+  </script>
+</body>
+</html>
